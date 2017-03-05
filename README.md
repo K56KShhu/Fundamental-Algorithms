@@ -1,2 +1,10 @@
 # Fundamental-Algorithms
-some algorithms may be used in the work
+
+## Intro
+some algorithms may be used in the work  
+
+## sort
+- BubbleSort
+- SelectSort
+- QuickSort
+
