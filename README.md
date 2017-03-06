@@ -8,6 +8,9 @@ some algorithms may be used in the work
 - BubbleSort
 - SelectSort
 - QuickSort
-- fibonacci loop
-- fibonacci recursion
-- palindrome (contains string and number)
+- fibonacci in loop
+- fibonacci in recursion
+- check palindrome (contains string and number)
+- check prime  
+- divide a number into two prime number
+- build a pyramid

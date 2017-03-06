@@ -2,13 +2,12 @@
 #include<string.h>
 void palindrome_string_A();
 void palindrome_string_B();
-void palindrome_number_A();
-void palindrome_number_B();
+void palindrome_number();
 
 
 int main(void) {
 
-    palindrome_number_B();
+    palindrome_number();
 
     return 0;
 }
@@ -60,42 +59,26 @@ void palindrome_string_B() {
 }
 
 
-void palindrome_number_A() {
-    int n;
-    int reverse = 0;
+void palindrome_number() {
+    int origin;
+    int rev = 0;
     int temp;
 
-    printf("please enter a number\n");
-    scanf("%d", &n);
+    printf("please enter a number: ");
+    scanf("%d", &origin);
+    temp = origin;
 
-    temp = n;
-
-    printf("temp = %d  reverse = %d\n", temp, reverse);
     while (temp != 0) {
-        reverse = reverse * 10;
-        reverse = reverse + temp % 10;
+        rev = rev * 10;
+        rev = rev + temp % 10;
         temp = temp / 10;
-        printf("temp = %d  reverse = %d\n", temp, reverse);
     }
 
-    if (n == reverse)
-        printf("%d is a palindrome\n", n);
-    else
-        printf("%d is not a palindrome\n", n);
-}
-
-
-void palindrome_number_B() {
-    int n;
-    int a;
-
-    printf("please enter a number: ");
-    scanf("%d", &n);
-
-    while (n != 0) {
-        a = n % 10;
-        n = n / 10;
-        printf("%2d", a);
+    if (rev == origin) {
+        printf("%d is a palindrome number\n", origin);
+    }
+    else {
+        printf("%d is not a palindrome number\n", origin);
     }
 }
 
