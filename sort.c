@@ -4,13 +4,16 @@ void showArray(int ar[]);
 void swap(int *x, int *y);
 void BubbleSort1(int ar[]);
 void BubbleSort2(int ar[]);
+void InsertSort(int ar[]);
 void SelectSort(int ar[]);
 void QuickSort(int ar[], int start, int end);
 
 int main(void) {
     int a[SIZE] = { 2, 7, 3, 1, 6 };
 
-    QuickSort(a, 0, SIZE);
+//  QuickSort(a, 0, SIZE);
+    InsertSort(a);
+    showArray(a);
 
     return 0;
 }
@@ -111,6 +114,24 @@ void QuickSort(int ar[], int start, int end) {
 }
 
     
+void InsertSort(int ar[]) {
+    int i, j;
+    int temp;
+
+    for (i = 1; i < SIZE; i++) {
+        temp = ar[i];
+        j = i - 1;
+        //take care: j--
+        for (; j >= 0 && ar[j] > temp; j--) {
+            ar[j + 1] = ar[j];
+        }
+        ar[j + 1] = temp;
+        printf("ar[%d] = %d\n", j + 1, temp);
+    }
+}
+
+
+
 
 
 
