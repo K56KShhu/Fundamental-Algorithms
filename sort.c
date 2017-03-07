@@ -1,9 +1,11 @@
 #include<stdio.h>
+#include<stdbool.h>
 #define SIZE 5
 void showArray(int ar[]);
 void swap(int *x, int *y);
 void BubbleSort1(int ar[]);
 void BubbleSort2(int ar[]);
+void BubbleSort_better(int ar[]);
 void InsertSort(int ar[]);
 void SelectSort(int ar[]);
 void QuickSort(int ar[], int start, int end);
@@ -12,8 +14,8 @@ int main(void) {
     int a[SIZE] = { 2, 7, 3, 1, 6 };
 
 //  QuickSort(a, 0, SIZE);
-    InsertSort(a);
-    showArray(a);
+//  InsertSort(a);
+    BubbleSort_better(a);
 
     return 0;
 }
@@ -69,6 +71,29 @@ void BubbleSort2(int ar[]) {
 
     showArray(ar);
 }
+
+
+void BubbleSort_better(int ar[]) {
+    int i, j;
+    int temp;
+    bool had_sorted = true;
+
+    for (j = SIZE - 1; 0 < j && had_sorted; j--) {
+        had_sorted = false;
+        for (i = 0; i < j; i++) {
+            if (ar[i] > ar[i + 1]) {
+                temp = ar[i];
+                ar[i] = ar[i + 1];
+                ar[i + 1] = temp;
+                had_sorted = true;
+            }
+        }
+    }
+
+    showArray(ar);
+}
+
+
 
 
 void SelectSort(int ar[]) {
@@ -128,6 +153,8 @@ void InsertSort(int ar[]) {
         ar[j + 1] = temp;
         printf("ar[%d] = %d\n", j + 1, temp);
     }
+
+    showArray(ar);
 }
 
 
